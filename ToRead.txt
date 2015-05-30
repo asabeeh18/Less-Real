@@ -1,0 +1,20 @@
+Bugs:
+	i.  Username wont change when logged in for the first time.Need to exit the app and run again.
+	ii. App does not run again unless RAM is cleared
+	
+TODO/Features
+	i.   View Favourites
+	ii.  View profile
+	iii. View Quotes of Anime
+	iv.  Add to favourite
+	v.   Splash Screen
+	vi. App icon
+	
+Drawer - similar to/inspired from Google music drawer
+	i.   Quotes
+	ii.  Favourites
+	iii. Profile..?
+	iv.  Help
+	v.  Support/Feedback
+	vi. Settings (For the FAR future skins and all...)
+	
