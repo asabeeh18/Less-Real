@@ -46,8 +46,8 @@ public class MainActivity extends ActionBarActivity {
         Log.d("State", "onPause");
     }
 
-    @Override
-    protected void onResume() {
+    //@Override
+    /*protected void onResume() {
         super.onResume();
         Log.d("State", "onResume");
 
@@ -69,6 +69,7 @@ public class MainActivity extends ActionBarActivity {
         //mainList.setAdapter(customAdapter);
 
     }
+    */
 
 /*    @Override
     public void onSaveInstanceState(Bundle outState) {
@@ -150,7 +151,7 @@ public class MainActivity extends ActionBarActivity {
         String order="desc";
         String order_by="timestamp";
         int num=3;
-        start+=10;
+        start+=3;
         return "http://www.less-real.com/api/v1/quotes?from="+start+"&num="+num+"&o="+order_by+"&o_d="+order;
     }
 
