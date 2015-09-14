@@ -11,7 +11,6 @@
 
 
 
-    <uk.co.deanwild.flowtextview.FlowTextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView2"
@@ -21,30 +20,6 @@
 
         android:textSize="24sp"
         android:background="#d4feff03"
-
-        android:textColor="@android:color/white"
-        android:longClickable="true">
-
-        <ImageView
-            android:id="@+id/imageView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:background="#00000000"
-            android:longClickable="true"
-
-            android:paddingRight="10dp"
-            android:maxHeight="50dp"
-            android:maxWidth="50dp" />
-
-    </uk.co.deanwild.flowtextview.FlowTextView>
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
         android:text="CodeLearn 1"
         android:background="#1b1b1f"
         android:textColor="@android:color/white"
