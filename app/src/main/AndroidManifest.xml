@@ -45,6 +45,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.tct.less_real.MainActivity" />
         </activity>
+        <activity
+            android:name=".Stored"
+            android:label="@string/title_activity_stored"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.tct.less_real.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

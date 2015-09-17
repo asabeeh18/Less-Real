@@ -5,4 +5,6 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="login">Login</string>
+    <string name="title_activity_stored">Stored</string>
+    <string name="title_fav">Fav</string>
 </resources>

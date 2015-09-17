@@ -1,0 +1,16 @@
+Index: app/src/main/java/com/tct/less_real/LIster.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1252
+===================================================================
+--- app/src/main/java/com/tct/less_real/LIster.java	(revision )
++++ app/src/main/java/com/tct/less_real/LIster.java	(revision )
+@@ -59,7 +59,7 @@
+ 
+ 
+         FlowTextView chapterDesc = (FlowTextView)arg1.findViewById(R.id.textView2);
+-        chapterDesc.setTextColor()
++        chapterDesc.setColor(1);
+         TextView chapterName = (TextView)arg1.findViewById(R.id.textView1);
+        // FlowTextView chapterDesc = (FlowTextView)arg1.findViewById(R.id.textView2);
+         ImageView bM=(ImageView)arg1.findViewById(R.id.imageView1);

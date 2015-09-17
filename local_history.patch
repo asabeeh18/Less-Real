@@ -1,0 +1,63 @@
+Index: app/src/main/java/com/tct/less_real/LIster.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1252
+===================================================================
+--- app/src/main/java/com/tct/less_real/LIster.java	(revision )
++++ app/src/main/java/com/tct/less_real/LIster.java	(revision )
+@@ -1,7 +1,6 @@
+ package com.tct.less_real;
+ 
+ import android.content.Context;
+-import android.graphics.Movie;
+ import android.util.Log;
+ import android.view.LayoutInflater;
+ import android.view.View;
+@@ -10,7 +9,6 @@
+ import android.widget.ImageView;
+ import android.widget.TextView;
+ 
+-import java.util.ArrayList;
+ import java.util.List;
+ 
+ import uk.co.deanwild.flowtextview.FlowTextView;
+@@ -23,9 +21,6 @@
+     Context context;
+     List<Quote> objList;
+     Context act;
+-    public LIster() {
+-
+-    }
+     public LIster(List<Quote> objList,Context act)
+     {
+         this.act=act;
+@@ -34,11 +29,6 @@
+         this.objList = objList;
+         Log.d("State","Constructor:LIster");
+     }
+-    public void setQuotes(List<Quote> quotes) {
+-        this.objList = quotes;
+-        //update the adapter to reflect the new set of movies
+-        notifyDataSetChanged();
+-    }
+ 
+     @Override
+     public int getCount() {
+@@ -68,15 +58,14 @@
+         }
+ 
+ 
+-        FlowTextView chapterDesc = (FlowTextView)arg1.findViewById(R.id.FlowText);
++        FlowTextView chapterDesc = (FlowTextView)arg1.findViewById(R.id.textView2);
++        chapterDesc.setColor(1);
+         TextView chapterName = (TextView)arg1.findViewById(R.id.textView1);
+-        TextView animeName = (TextView)arg1.findViewById(R.id.animeName);
+        // FlowTextView chapterDesc = (FlowTextView)arg1.findViewById(R.id.textView2);
+         ImageView bM=(ImageView)arg1.findViewById(R.id.imageView1);
+         Quote chapter = objList.get(arg0);
+         chapterDesc.setOnTouchListener(null);
+         chapterName.setText(chapter.says);
+-        animeName.setText(chapter.anime);
+         chapterDesc.setText(chapter.text);
+       //  chapterDesc.invalidate();
+         bM.setImageBitmap(chapter.img);

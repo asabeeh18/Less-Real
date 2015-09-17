@@ -25,13 +25,21 @@ import java.util.List;
  */
 public class Connect extends AsyncTask<String,Integer,String>
 {
-    static List<Quote> objList=new ArrayList<>();
+    public Quote getQuote(int pos) {
+        return objList.get(pos);
+    }
+
+    static ArrayList<Quote> objList=new ArrayList<>();
     static ListView mainList;
     static LIster customAdapter;
     static boolean set=false;
     Context act;
     ActionBar bar;
     static ProgressBar pBar;
+
+    public Connect() {
+
+    }
     public Connect(ListView mainList,Context act,ActionBar bar)
     {
         pBar=(new MainActivity()).mProgress;
@@ -42,7 +50,10 @@ public class Connect extends AsyncTask<String,Integer,String>
         //this.says=says;
         this.mainList=mainList;
     }
-
+public static ArrayList<Quote> getList()
+    {
+        return objList;
+    }
     @Override
     protected void onProgressUpdate(Integer... values) {
         super.onProgressUpdate(values);
@@ -64,8 +75,9 @@ public class Connect extends AsyncTask<String,Integer,String>
     }
     @Override
     protected String doInBackground(String... arg) {
-        if(mainList.getAdapter()!=null)
+       /* if(mainList.getAdapter()!=null)
             Log.d("Count", mainList.getAdapter().getCount()+"");
+        */
         publishProgress(0);
         String link = arg[0];
         synkingShip(link);
@@ -85,6 +97,17 @@ public class Connect extends AsyncTask<String,Integer,String>
         }
         */
     }
+    public void addToList(ArrayList<Quote> objList)
+    {
+        Log.d("NULLS", "Custom Adapter null");
+        Log.d("State", "Added in List");
+        customAdapter = new LIster(objList, act);
+        Log.d("State", "Constructor Lister");
+        mainList.setAdapter(customAdapter);
+        Log.d("State", "SET listner");
+        mainList.setOnScrollListener(new EndlessScrollListener(mainList, act, bar));
+        Log.d("Resume", "Adapted");
+    }
 
     protected void onPostExecute(String res) {
         Log.d("State", "Downloaded");
@@ -93,15 +116,7 @@ public class Connect extends AsyncTask<String,Integer,String>
 
 
         if(customAdapter==null) {
-
-
-            Log.d("NULLS", "Custom Adapter null");
-            Log.d("State", "Added in List");
-            customAdapter = new LIster(objList, act);
-            Log.d("State", "Constructor Lister");
-            mainList.setAdapter(customAdapter);
-            Log.d("State", "SET listner");
-            mainList.setOnScrollListener(new EndlessScrollListener(mainList,act,bar));
+            addToList(objList);
         }
         else
         {
@@ -128,7 +143,7 @@ public class Connect extends AsyncTask<String,Integer,String>
 
     }
 
-    private List<Quote> parseJSON(JSONObject mySon)
+    private ArrayList<Quote> parseJSON(JSONObject mySon)
     {
 
         String imgLInk;
@@ -140,7 +155,7 @@ public class Connect extends AsyncTask<String,Integer,String>
                 JSONObject jQuote = qArray.getJSONObject(i);
                 send.says = jQuote.getString("author");
                 send.text = jQuote.getString("quote");
-
+                send.anime = jQuote.getString("anime");
 
                 imgLInk = jQuote.getString("image");
             //    Log.d("State", "Calling Http2");
