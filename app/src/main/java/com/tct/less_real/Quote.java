@@ -16,6 +16,10 @@ public class Quote implements Parcelable {
     public Quote() {
 
     }
+    public Quote(String text,String says) {
+        this.text=text;
+        this.says=says;
+    }
     protected Quote(Parcel in) {
         text = in.readString();
         says = in.readString();

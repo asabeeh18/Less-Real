@@ -73,14 +73,19 @@ public class MainActivity extends ActionBarActivity {
             int suffix=pref.getInt("Number", 0);
 
             editor.putString("Quote"+suffix,quote.text);
-            editor.putString("Character"+suffix,quote.says);
-            editor.putInt("Number",suffix+1);
+            editor.putString("Character" + suffix, quote.says);
+            editor.putInt("Number", suffix + 1);
             editor.apply();
-            Toast.makeText(act,"Added to favourites", Toast.LENGTH_LONG).show();
+            Toast.makeText(act,"Added to favourites", Toast.LENGTH_SHORT).show();
             Log.d("long clicked", "pos: " + pos);
             return true;
         }
     });
+    }
+    public void clearData()
+    {
+        SharedPreferences.Editor editor = pref.edit();
+        editor.clear();
     }
 
 
@@ -111,41 +116,9 @@ public class MainActivity extends ActionBarActivity {
     //MARKED future scope beyond this point
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.login) {
-            if(user==null)
-            {
-                loginSeq();
-
-                pref = getSharedPreferences("cookie", Context.MODE_PRIVATE);
-                if (pref.contains("user")) {
-                    user = pref.getString("user", "");
-                    mn.setTitle(user);
-                    finish();
-                }
-            }
-
-            return true;
-        }
-
         return super.onOptionsItemSelected(item);
     }
-    public void loginSeq()
-    {
-        //Change ActionBar after Login
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
-        /*
-        if(code==1)
-            findViewById(R.id.login).setVisibility(View.GONE);
-        */
-    }
-    public void favourites(View view){
+    public void favourites(MenuItem item){
         Intent intent=new Intent(this,Stored.class);
         startActivity(intent);
     }

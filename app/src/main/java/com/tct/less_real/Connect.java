@@ -97,6 +97,17 @@ public static ArrayList<Quote> getList()
         }
         */
     }
+    public void addToStaticList(ArrayList<Quote> objList)
+    {
+        Log.d("NULLS", "Custom Adapter null");
+        Log.d("State", "Added in List");
+        customAdapter = new LIster(objList, act);
+        Log.d("State", "Constructor Lister");
+        mainList.setAdapter(customAdapter);
+        Log.d("State", "SET listner");
+//        mainList.setOnScrollListener(new EndlessScrollListener(mainList, act, bar));
+        Log.d("Resume", "Adapted");
+    }
     public void addToList(ArrayList<Quote> objList)
     {
         Log.d("NULLS", "Custom Adapter null");
