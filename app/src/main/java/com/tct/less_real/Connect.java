@@ -124,26 +124,28 @@ public static ArrayList<Quote> getList()
         Log.d("State", "Downloaded");
 
 		//ading it in 10 times
+        if(customAdapter==null) {
+            addToList(objList);
+        }
+        else {
 
-        addToList(objList);
 
-
-            ((MainActivity)act).runOnUiThread(new Runnable() {
+            ((MainActivity) act).runOnUiThread(new Runnable() {
                 public void run() {
                     customAdapter.notifyDataSetChanged();
-                    int firstVisibleItem = mainList.getFirstVisiblePosition();
+                   /* int firstVisibleItem = mainList.getFirstVisiblePosition();
                     int oldCount = customAdapter.getCount();
                     View view = mainList.getChildAt(0);
                     int pos = (mainList == null ? 0 : mainList.getTop());
                     customAdapter.notifyDataSetChanged();
-                    mainList.setSelectionFromTop(firstVisibleItem, 0);
+                    mainList.setSelectionFromTop(firstVisibleItem, 0);*/
 
                 }
             }); // end of runOnUiThread
 
-           // ((MainActivity)act).start+=10;
-            Log.d("Counter",""+((MainActivity)act).start);
-
+            // ((MainActivity)act).start+=10;
+            Log.d("Counter", "" + ((MainActivity) act).start);
+        }
 
         //  img.setImageBitmap(res.img);
         Log.d("State", "ALL Done !! STOp");
