@@ -78,11 +78,10 @@ public class EndlessScrollListener implements AbsListView.OnScrollListener {
             // I load the next page of gigs using a background task,
             // but you can call any function here.
             Log.d("State", "<<MORE DATA>>");
-            if(mainList !=null)
-            {
+
                 String url=((MainActivity)act).computeURL();
                 new Connect(mainList,act,bar).execute(url);
-            }
+
             //Log.d("Endless",url);
 
 

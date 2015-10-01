@@ -18,7 +18,6 @@ import java.io.OutputStreamWriter;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Ahmed on 2/18/2015.
@@ -26,13 +25,13 @@ import java.util.List;
 public class Connect extends AsyncTask<String,Integer,String>
 {
     public Quote getQuote(int pos) {
-        return objList.get(pos);
+        return quoteList.get(pos);
     }
 
-    static ArrayList<Quote> objList=new ArrayList<>();
-    static ListView mainList;
+    ArrayList<Quote> quoteList = new ArrayList<>();
+    ListView mainList;
     static LIster customAdapter;
-    static boolean set=false;
+    boolean set=false;
     Context act;
     ActionBar bar;
     static ProgressBar pBar;
@@ -50,9 +49,9 @@ public class Connect extends AsyncTask<String,Integer,String>
         //this.says=says;
         this.mainList=mainList;
     }
-public static ArrayList<Quote> getList()
+public  ArrayList<Quote> getList()
     {
-        return objList;
+        return quoteList;
     }
     @Override
     protected void onProgressUpdate(Integer... values) {
@@ -68,7 +67,7 @@ public static ArrayList<Quote> getList()
         String res = getText(link);
         res = "{Quote:" + res + "}";
         try {
-            objList = parseJSON(new JSONObject(res));
+            quoteList = parseJSON(new JSONObject(res));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -127,18 +126,19 @@ public static ArrayList<Quote> getList()
 
 
         if(customAdapter==null) {
-            addToList(objList);
+            addToList(quoteList);
         }
         else
         {
 
             ((MainActivity)act).runOnUiThread(new Runnable() {
                 public void run() {
-                    customAdapter.notifyDataSetChanged();
-                    int firstVisibleItem = mainList.getFirstVisiblePosition();
+                    /*customAdapter.notifyDataSetChanged();
+
                     int oldCount = customAdapter.getCount();
                     View view = mainList.getChildAt(0);
-                    int pos = (mainList == null ? 0 : mainList.getTop());
+                    int pos = (mainList == null ? 0 : mainList.getTop());*/
+                    int firstVisibleItem = mainList.getFirstVisiblePosition();
                     customAdapter.notifyDataSetChanged();
                     mainList.setSelectionFromTop(firstVisibleItem, 0);
 
@@ -178,7 +178,7 @@ public static ArrayList<Quote> getList()
                     e.printStackTrace();
 
                 }
-                objList.add(send);
+                quoteList.add(send);
             }
             //Log.d("JSON",jQuote.getString("author"));
         }
@@ -186,7 +186,7 @@ public static ArrayList<Quote> getList()
         {
             e.printStackTrace();
         }
-        return objList;
+        return quoteList;
     }
 
 

@@ -37,13 +37,7 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-  /*      if(savedInstanceState!=null)
-        {
-            ArrayList<Quote> qu=savedInstanceState.getParcelableArrayList("MainList");
-            connectify.addToList(qu);
-            Log.d("Resume", "Applied");
-        }
-    */
+
         Log.d("State", "onCreate");
         mProgress = (ProgressBar) findViewById(R.id.pBar);
         //URL constants
@@ -99,7 +93,7 @@ public class MainActivity extends ActionBarActivity {
     {
         String order="desc";
         String order_by="timestamp";
-        int num=1;
+        int num=10;
         start+=1;
         return "http://www.less-real.com/api/v1/quotes?from="+start+"&num="+num+"&o="+order_by+"&o_d="+order;
     }
