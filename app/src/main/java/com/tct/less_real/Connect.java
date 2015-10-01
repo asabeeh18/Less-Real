@@ -125,12 +125,8 @@ public static ArrayList<Quote> getList()
 
 		//ading it in 10 times
 
+        addToList(objList);
 
-        if(customAdapter==null) {
-            addToList(objList);
-        }
-        else
-        {
 
             ((MainActivity)act).runOnUiThread(new Runnable() {
                 public void run() {
@@ -148,7 +144,7 @@ public static ArrayList<Quote> getList()
            // ((MainActivity)act).start+=10;
             Log.d("Counter",""+((MainActivity)act).start);
 
-        }
+
         //  img.setImageBitmap(res.img);
         Log.d("State", "ALL Done !! STOp");
 
