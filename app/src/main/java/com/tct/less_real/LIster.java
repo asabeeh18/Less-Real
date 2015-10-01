@@ -1,7 +1,6 @@
 package com.tct.less_real;
 
 import android.content.Context;
-import android.graphics.Movie;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,9 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.List;
-
-import uk.co.deanwild.flowtextview.FlowTextView;
 
 /**
  * Created by Ahmed on 2/18/2015.
@@ -68,17 +64,26 @@ public class LIster extends BaseAdapter {
         }
 
 
-        TextView chapterDesc = (TextView)arg1.findViewById(R.id.textView2);
-        TextView chapterName = (TextView)arg1.findViewById(R.id.textView1);
+        TextView quote = (TextView)arg1.findViewById(R.id.quote);
+        TextView says = (TextView)arg1.findViewById(R.id.says);
+        TextView animeName = (TextView)arg1.findViewById(R.id.animeName);
       //  TextView animeName = (TextView)arg1.findViewById(R.id.animeName);
        // FlowTextView chapterDesc = (FlowTextView)arg1.findViewById(R.id.textView2);
         ImageView bM=(ImageView)arg1.findViewById(R.id.imageView1);
         Quote chapter = objList.get(arg0);
+<<<<<<< HEAD
+        quote.setOnTouchListener(null);
+        says.setText(chapter.says);
+        animeName.setText(chapter.anime);
+        //animeName.setText(chapter.anime);
+        quote.setText(chapter.text);
+=======
         Log.d("Debug",chapter.anime);
         chapterDesc.setOnTouchListener(null);
         chapterName.setText(chapter.says);
 
         chapterDesc.setText(chapter.text);
+>>>>>>> 8de1fea018a26bb5f0d76b3c3dd560417ac27c45
       //  chapterDesc.invalidate();
         bM.setImageBitmap(chapter.img);
       //  Log.d("State", "Got View Inflated");
