@@ -71,11 +71,19 @@ public class LIster extends BaseAdapter {
        // FlowTextView chapterDesc = (FlowTextView)arg1.findViewById(R.id.textView2);
         ImageView bM=(ImageView)arg1.findViewById(R.id.imageView1);
         Quote chapter = objList.get(arg0);
+<<<<<<< HEAD
         quote.setOnTouchListener(null);
         says.setText(chapter.says);
         animeName.setText(chapter.anime);
         //animeName.setText(chapter.anime);
         quote.setText(chapter.text);
+=======
+        Log.d("Debug",chapter.anime);
+        chapterDesc.setOnTouchListener(null);
+        chapterName.setText(chapter.says);
+
+        chapterDesc.setText(chapter.text);
+>>>>>>> 8de1fea018a26bb5f0d76b3c3dd560417ac27c45
       //  chapterDesc.invalidate();
         bM.setImageBitmap(chapter.img);
       //  Log.d("State", "Got View Inflated");

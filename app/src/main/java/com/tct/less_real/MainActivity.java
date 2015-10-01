@@ -47,7 +47,7 @@ public class MainActivity extends ActionBarActivity {
 
         //getActionBar() for future
         connectify= new Connect(mainList,this,getActionBar());
-    connectify.execute(url);
+        connectify.execute(url);
         //END LOADING
 
 
@@ -81,6 +81,7 @@ public class MainActivity extends ActionBarActivity {
         SharedPreferences.Editor editor = pref.edit();
         editor.clear();
     }
+
 
 
     @Override
