@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
@@ -13,11 +14,14 @@ import java.util.ArrayList;
 
 public class Stored extends ActionBarActivity {
     ListView mainList;
+    ArrayList<Quote> objList=new ArrayList<>();
+
+    LIster customAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Intent intent=getIntent();
+        setContentView(R.layout.activity_stored);
+        //Intent intent=getIntent();
         ArrayList<Quote> quote=new ArrayList<>();;
         SharedPreferences pref=getSharedPreferences("data", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = pref.edit();
@@ -30,9 +34,10 @@ public class Stored extends ActionBarActivity {
 
             quote.add(new Quote(text,says));
         }
+        Log.d("Stored","Make it!");
         mainList = (ListView)findViewById(R.id.listView1);
-        Connect connectify= new Connect(mainList,this,getActionBar());
-        connectify.addToStaticList(quote);
+        customAdapter = new LIster(quote,this);
+        mainList.setAdapter(customAdapter);
     }
 
     @Override

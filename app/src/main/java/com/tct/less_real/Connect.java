@@ -32,7 +32,7 @@ public class Connect extends AsyncTask<String,Integer,String>
     static ArrayList<Quote> objList=new ArrayList<>();
     static ListView mainList;
     static LIster customAdapter;
-    static boolean set=false;
+
     Context act;
     ActionBar bar;
     static ProgressBar pBar;
@@ -97,7 +97,7 @@ public static ArrayList<Quote> getList()
         }
         */
     }
-    public void addToStaticList(ArrayList<Quote> objList)
+  /*  public void addToStaticList(ArrayList<Quote> objList)
     {
         Log.d("NULLS", "Custom Adapter null");
         Log.d("State", "Added in List");
@@ -107,7 +107,7 @@ public static ArrayList<Quote> getList()
         Log.d("State", "SET listner");
 //        mainList.setOnScrollListener(new EndlessScrollListener(mainList, act, bar));
         Log.d("Resume", "Adapted");
-    }
+    }*/
     public void addToList(ArrayList<Quote> objList)
     {
         Log.d("NULLS", "Custom Adapter null");

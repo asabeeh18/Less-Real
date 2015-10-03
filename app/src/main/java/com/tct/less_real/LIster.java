@@ -1,19 +1,18 @@
 package com.tct.less_real;
 
 import android.content.Context;
-import android.graphics.Movie;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.List;
-
-import uk.co.deanwild.flowtextview.FlowTextView;
 
 /**
  * Created by Ahmed on 2/18/2015.
@@ -68,19 +67,32 @@ public class LIster extends BaseAdapter {
         }
 
 
-        TextView chapterDesc = (TextView)arg1.findViewById(R.id.textView2);
-        TextView chapterName = (TextView)arg1.findViewById(R.id.textView1);
+        TextView animeQuote = (TextView)arg1.findViewById(R.id.quote);
+        TextView animeSays = (TextView)arg1.findViewById(R.id.says);
+        TextView animeName = (TextView)arg1.findViewById(R.id.animeName);
       //  TextView animeName = (TextView)arg1.findViewById(R.id.animeName);
        // FlowTextView chapterDesc = (FlowTextView)arg1.findViewById(R.id.textView2);
-        ImageView bM=(ImageView)arg1.findViewById(R.id.imageView1);
-        Quote chapter = objList.get(arg0);
-        //Log.d("Debug",chapter.anime);
-        chapterDesc.setOnTouchListener(null);
-        chapterName.setText(chapter.says);
 
-        chapterDesc.setText(chapter.text);
+        Quote anime = objList.get(arg0);
+        //Log.d("Debug",chapter.anime);
+        animeQuote.setOnTouchListener(null);
+
       //  chapterDesc.invalidate();
-        bM.setImageBitmap(chapter.img);
+        if(anime.img!=null) {
+            ImageView bM = (ImageView) arg1.findViewById(R.id.saysImage);
+
+            bM.setImageBitmap(anime.img);
+        }
+       else
+        {
+            ImageView bM = (ImageView) arg1.findViewById(R.id.saysImage);
+            bM.setVisibility(View.GONE);
+
+            //((ViewGroup)bM.getParent()).removeView(bM);
+        }
+        animeSays.setText(anime.says);
+        animeName.setText(anime.anime);
+        animeQuote.setText(anime.text);
       //  Log.d("State", "Got View Inflated");
 
         return arg1;
