@@ -133,6 +133,12 @@ public static ArrayList<Quote> getList()
 
             ((MainActivity) act).runOnUiThread(new Runnable() {
                 public void run() {
+                    if(mainList.getAdapter()==null)
+                    {
+                        mainList.setAdapter(customAdapter);
+
+                        mainList.setSelectionFromTop(MainActivity.firstVisibleItem,0);
+                    }
                     customAdapter.notifyDataSetChanged();
                     Log.d("Resume", "Recycling"+objList+" "+mainList);
                            /* int firstVisibleItem = mainList.getFirstVisiblePosition();

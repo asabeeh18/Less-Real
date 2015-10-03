@@ -22,7 +22,7 @@ import java.util.List;
 
 public class MainActivity extends ActionBarActivity {
 
-    public int start=-1;
+    public static int start=-1;
     String url= computeURL();
     SharedPreferences pref;
     String user;
@@ -30,10 +30,21 @@ public class MainActivity extends ActionBarActivity {
     MenuItem mn;
     Connect connectify;
     Context act;
-
+    static int firstVisibleItem=0;
     protected static ProgressBar mProgress;
     ListView mainList;
-@Override
+
+    /**
+     * Dispatch onPause() to fragments.
+     */
+    @Override
+    protected void onPause() {
+        firstVisibleItem=mainList.getFirstVisiblePosition();
+        super.onPause();
+
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
