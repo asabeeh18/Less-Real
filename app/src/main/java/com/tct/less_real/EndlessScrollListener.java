@@ -45,27 +45,27 @@ public class EndlessScrollListener implements AbsListView.OnScrollListener {
         if (view.getId() == mainList.getId()) {
 
         }
-            final int currentFirstVisibleItem = mainList.getFirstVisiblePosition();
+        final int currentFirstVisibleItem = mainList.getFirstVisiblePosition();
 
-            if (currentFirstVisibleItem > mLastFirstVisibleItem) {
-                Log.d("scroll","-------HIDDEN");
-                // getSherlockActivity().getSupportActionBar().hide();
-                if(bar!=null)
-                {
-                    bar.hide();
-                    Log.d("scroll","-------HIDDEN-");
-                }
-            } else if (currentFirstVisibleItem < mLastFirstVisibleItem) {
-                Log.d("scroll", "SHOWN----------");
-                if(bar!=null)
-                {
-                    // getSherlockActivity().getSupportActionBar().show();
-                    bar.show();
-                    Log.d("scroll", "-SHOWN----------");
-                }
+        if (currentFirstVisibleItem > mLastFirstVisibleItem) {
+            Log.d("scroll","-------HIDDEN");
+            // getSherlockActivity().getSupportActionBar().hide();
+            if(bar!=null)
+            {
+                bar.hide();
+                Log.d("scroll","-------HIDDEN-");
             }
+        } else if (currentFirstVisibleItem < mLastFirstVisibleItem) {
+            Log.d("scroll", "SHOWN----------");
+            if(bar!=null)
+            {
+                // getSherlockActivity().getSupportActionBar().show();
+                bar.show();
+                Log.d("scroll", "-SHOWN----------");
+            }
+        }
 
-            mLastFirstVisibleItem = currentFirstVisibleItem;
+        mLastFirstVisibleItem = currentFirstVisibleItem;
         if (loading) {
             if (totalItemCount > previousTotal) {
                 loading = false;
@@ -78,10 +78,11 @@ public class EndlessScrollListener implements AbsListView.OnScrollListener {
             // I load the next page of gigs using a background task,
             // but you can call any function here.
             Log.d("State", "<<MORE DATA>>");
-
+            if(mainList !=null)
+            {
                 String url=((MainActivity)act).computeURL();
                 new Connect(mainList,act,bar).execute(url);
-
+            }
             //Log.d("Endless",url);
 
 

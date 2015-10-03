@@ -94,7 +94,7 @@ public class MainActivity extends ActionBarActivity {
     {
         String order="desc";
         String order_by="timestamp";
-        int num=10;
+        int num=1;
         start+=1;
         return "http://www.less-real.com/api/v1/quotes?from="+start+"&num="+num+"&o="+order_by+"&o_d="+order;
     }

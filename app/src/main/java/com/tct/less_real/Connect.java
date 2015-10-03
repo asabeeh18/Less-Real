@@ -122,49 +122,43 @@ public  ArrayList<Quote> getList()
     protected void onPostExecute(String res) {
         Log.d("State", "Downloaded");
 
-		//ading it in 10 times
-        if(customAdapter==null) {
-            addToList(objList);
-        }
-        else {
-
-<<<<<<< HEAD
-        if(customAdapter==null) {
+        //ading it in 10 times
+        if (customAdapter == null) {
             addToList(quoteList);
-        }
-        else
-        {
-=======
->>>>>>> 8de1fea018a26bb5f0d76b3c3dd560417ac27c45
+        } else {
 
-            ((MainActivity) act).runOnUiThread(new Runnable() {
-                public void run() {
-<<<<<<< HEAD
-                    customAdapter.notifyDataSetChanged();
+
+            if (customAdapter == null) {
+                addToList(quoteList);
+            } else {
+                ((MainActivity) act).runOnUiThread(new Runnable() {
+                    public void run() {
+
+                        customAdapter.notifyDataSetChanged();
                    /* int firstVisibleItem = mainList.getFirstVisiblePosition();
-=======
+
                     /*customAdapter.notifyDataSetChanged();
 
->>>>>>> f9a7c5b5de6e50a1d8bfe7302f5a6aa9f1ad4375
+
                     int oldCount = customAdapter.getCount();
                     View view = mainList.getChildAt(0);
                     int pos = (mainList == null ? 0 : mainList.getTop());*/
-                    int firstVisibleItem = mainList.getFirstVisiblePosition();
-                    customAdapter.notifyDataSetChanged();
-                    mainList.setSelectionFromTop(firstVisibleItem, 0);*/
+                        int firstVisibleItem = mainList.getFirstVisiblePosition();
+                        customAdapter.notifyDataSetChanged();
+                        mainList.setSelectionFromTop(firstVisibleItem, 0);
 
-                }
-            }); // end of runOnUiThread
+                    }
+                }); // end of runOnUiThread
 
-            // ((MainActivity)act).start+=10;
-            Log.d("Counter", "" + ((MainActivity) act).start);
+                // ((MainActivity)act).start+=10;
+                Log.d("Counter", "" + ((MainActivity) act).start);
+            }
+
+            //  img.setImageBitmap(res.img);
+            Log.d("State", "ALL Done !! STOp");
+
         }
-
-        //  img.setImageBitmap(res.img);
-        Log.d("State", "ALL Done !! STOp");
-
     }
-
     private ArrayList<Quote> parseJSON(JSONObject mySon)
     {
 
@@ -199,6 +193,14 @@ public  ArrayList<Quote> getList()
         }
         return quoteList;
     }
+
+
+
+
+
+
+
+
 
 
     protected String getText(String link) {
