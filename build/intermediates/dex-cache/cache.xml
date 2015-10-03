@@ -9,13 +9,6 @@
         <dex dex="F:\PROgrammin\Android\Less-Real\app\build\intermediates\pre-dexed\debug\internal_impl-22.0.0-61b7931588564310ded0e7bb155a2b2e5df936b4.jar" />
     </item>
     <item
-        jar="C:\Program Files (x86)\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.0.0\support-annotations-22.0.0.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
-        <dex dex="F:\PROgrammin\Android\Less-Real\app\build\intermediates\pre-dexed\debug\support-annotations-22.0.0-8d653238a9e211de842e69bf85e03f5cc645ff2b.jar" />
-    </item>
-    <item
         jar="F:\PROgrammin\Android\Less-Real\app\build\intermediates\exploded-aar\uk.co.deanwild\flowtextview\2.0.2\jars\classes.jar"
         jumboMode="false"
         revision="21.1.1"
@@ -23,11 +16,11 @@
         <dex dex="F:\PROgrammin\Android\Less-Real\app\build\intermediates\pre-dexed\debug\classes-17d9a1ee552f6d4b3834ca0b75ab46461a8345f9.jar" />
     </item>
     <item
-        jar="F:\PROgrammin\Android\Less-Real\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\jars\classes.jar"
+        jar="C:\Program Files (x86)\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.0.0\support-annotations-22.0.0.jar"
         jumboMode="false"
         revision="21.1.1"
-        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
-        <dex dex="F:\PROgrammin\Android\Less-Real\app\build\intermediates\pre-dexed\debug\classes-446db95b225023b4982e766791d2324394fbc083.jar" />
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="F:\PROgrammin\Android\Less-Real\app\build\intermediates\pre-dexed\debug\support-annotations-22.0.0-8d653238a9e211de842e69bf85e03f5cc645ff2b.jar" />
     </item>
     <item
         jar="F:\PROgrammin\Android\Less-Real\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.0.0\jars\classes.jar"
@@ -35,6 +28,13 @@
         revision="21.1.1"
         sha1="d84409890828e07d344a3b9b1da545dba9897b51">
         <dex dex="F:\PROgrammin\Android\Less-Real\app\build\intermediates\pre-dexed\debug\classes-7299dba68e2510e50766cb17dc109ed72fc98cc5.jar" />
+    </item>
+    <item
+        jar="F:\PROgrammin\Android\Less-Real\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
+        <dex dex="F:\PROgrammin\Android\Less-Real\app\build\intermediates\pre-dexed\debug\classes-446db95b225023b4982e766791d2324394fbc083.jar" />
     </item>
 
 </items>
