@@ -74,7 +74,7 @@ public class LIster extends BaseAdapter {
        // FlowTextView chapterDesc = (FlowTextView)arg1.findViewById(R.id.textView2);
         ImageView bM=(ImageView)arg1.findViewById(R.id.imageView1);
         Quote chapter = objList.get(arg0);
-        Log.d("Debug",chapter.anime);
+        //Log.d("Debug",chapter.anime);
         chapterDesc.setOnTouchListener(null);
         chapterName.setText(chapter.says);
 
