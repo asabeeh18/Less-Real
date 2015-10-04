@@ -19,18 +19,19 @@
         android:id="@+id/quote"
 
         android:text="Description"
-        android:layout_toRightOf="@+id/imageView1"
+        android:layout_toRightOf="@+id/saysImage"
 
         android:textSize="15sp"
 
 
         android:textColor="@android:color/white"
-        android:longClickable="true">
+        android:longClickable="true"
+        android:layout_marginLeft="10dp">
 
     </TextView>
 
     <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/saysImage"
 
         android:layout_width="100dp"
         android:layout_height="wrap_content"
@@ -53,7 +54,7 @@
 
     <TextView
         android:id="@+id/animeName"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
 
         android:text="Anime Name"

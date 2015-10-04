@@ -6,8 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -64,6 +68,7 @@ public class LIster extends BaseAdapter {
         }
 
 
+<<<<<<< HEAD
         TextView quote = (TextView)arg1.findViewById(R.id.quote);
         TextView says = (TextView)arg1.findViewById(R.id.says);
         TextView animeName = (TextView)arg1.findViewById(R.id.animeName);
@@ -84,11 +89,36 @@ public class LIster extends BaseAdapter {
         animeName.setText(chapter.anime);
         quote.setText(chapter.text);
 
+=======
+        TextView animeQuote = (TextView)arg1.findViewById(R.id.quote);
+        TextView animeSays = (TextView)arg1.findViewById(R.id.says);
+        TextView animeName = (TextView)arg1.findViewById(R.id.animeName);
+      //  TextView animeName = (TextView)arg1.findViewById(R.id.animeName);
+       // FlowTextView chapterDesc = (FlowTextView)arg1.findViewById(R.id.textView2);
+
+        Quote anime = objList.get(arg0);
+        //Log.d("Debug",chapter.anime);
+        animeQuote.setOnTouchListener(null);
+
+>>>>>>> fix_stuff
       //  chapterDesc.invalidate();
-        bM.setImageBitmap(chapter.img);
+        if(anime.img!=null) {
+            ImageView bM = (ImageView) arg1.findViewById(R.id.saysImage);
+            bM.setImageBitmap(anime.img);
+        }
+       else
+        {
+            ImageView bM = (ImageView) arg1.findViewById(R.id.saysImage);
+            bM.setVisibility(View.GONE);
+
+        }
+        animeSays.setText(anime.says);
+        animeName.setText(anime.anime);
+        animeQuote.setText(anime.text);
       //  Log.d("State", "Got View Inflated");
 
         return arg1;
     }
+    //SWIPE
 
 }

@@ -31,15 +31,19 @@ public class Connect extends AsyncTask<String,Integer,String>
     ArrayList<Quote> quoteList = new ArrayList<>();
     ListView mainList;
     static LIster customAdapter;
+
     boolean set=false;
+
+
+
     Context act;
-    ActionBar bar;
+    android.support.v7.app.ActionBar bar;
     static ProgressBar pBar;
 
     public Connect() {
 
     }
-    public Connect(ListView mainList,Context act,ActionBar bar)
+    public Connect(ListView mainList,Context act,android.support.v7.app.ActionBar bar)
     {
         pBar=(new MainActivity()).mProgress;
         this.act=act;
@@ -96,7 +100,7 @@ public  ArrayList<Quote> getList()
         }
         */
     }
-    public void addToStaticList(ArrayList<Quote> objList)
+  /*  public void addToStaticList(ArrayList<Quote> objList)
     {
         Log.d("NULLS", "Custom Adapter null");
         Log.d("State", "Added in List");
@@ -106,7 +110,7 @@ public  ArrayList<Quote> getList()
         Log.d("State", "SET listner");
 //        mainList.setOnScrollListener(new EndlessScrollListener(mainList, act, bar));
         Log.d("Resume", "Adapted");
-    }
+    }*/
     public void addToList(ArrayList<Quote> objList)
     {
         Log.d("NULLS", "Custom Adapter null");
@@ -121,6 +125,7 @@ public  ArrayList<Quote> getList()
 
     protected void onPostExecute(String res) {
         Log.d("State", "Downloaded");
+
 
         //ading it in 10 times
         if (customAdapter == null) {
@@ -138,8 +143,17 @@ public  ArrayList<Quote> getList()
                    /* int firstVisibleItem = mainList.getFirstVisiblePosition();
 
                     /*customAdapter.notifyDataSetChanged();
+=======
+>>>>>>> fix_stuff
 
+        if(customAdapter==null)
+        {
+            addToList(objList);
+            Log.d("Resume","Not recycling");
+        }
+        else {
 
+<<<<<<< HEAD
                     int oldCount = customAdapter.getCount();
                     View view = mainList.getChildAt(0);
                     int pos = (mainList == null ? 0 : mainList.getTop());*/
@@ -156,6 +170,34 @@ public  ArrayList<Quote> getList()
 
             //  img.setImageBitmap(res.img);
             Log.d("State", "ALL Done !! STOp");
+
+            ((MainActivity) act).runOnUiThread(new Runnable() {
+                public void run() {
+                    if(mainList.getAdapter()==null)
+                    {
+                        mainList.setAdapter(customAdapter);
+                        mainList.setOnScrollListener(new EndlessScrollListener(mainList, act, bar));
+                        mainList.setSelectionFromTop(MainActivity.firstVisibleItem,0);
+                    }
+                    customAdapter.notifyDataSetChanged();
+                    Log.d("Resume", "Recycling"+objList+" "+mainList);
+                           /* int firstVisibleItem = mainList.getFirstVisiblePosition();
+                            int oldCount = customAdapter.getCount();
+                            View view = mainList.getChildAt(0);
+                            int pos = (mainList == null ? 0 : mainList.getTop());
+                            customAdapter.notifyDataSetChanged();
+                            mainList.setSelectionFromTop(firstVisibleItem, 0);*/
+
+                }
+            }); // end of runOnUiThread
+
+            // ((MainActivity)act).start+=10;
+            Log.d("Counter", "" + ((MainActivity) act).start);
+
+        }
+        //  img.setImageBitmap(res.img);
+        Log.d("State", "ALL Done !! STOp");
+
 
         }
     }

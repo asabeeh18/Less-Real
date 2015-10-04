@@ -23,9 +23,9 @@ public class EndlessScrollListener implements AbsListView.OnScrollListener {
     private boolean loading = true;
     static int mLastFirstVisibleItem = 0;
 
-    ActionBar bar;
+    android.support.v7.app.ActionBar bar;
 
-    public EndlessScrollListener(final ListView mainList,Context act,ActionBar bar) {
+    public EndlessScrollListener(final ListView mainList,Context act,android.support.v7.app.ActionBar bar) {
         this.bar=bar;
         this.act=act;
         this.mainList=mainList;
@@ -45,6 +45,7 @@ public class EndlessScrollListener implements AbsListView.OnScrollListener {
         if (view.getId() == mainList.getId()) {
 
         }
+<<<<<<< HEAD
         final int currentFirstVisibleItem = mainList.getFirstVisiblePosition();
 
         if (currentFirstVisibleItem > mLastFirstVisibleItem) {
@@ -54,6 +55,27 @@ public class EndlessScrollListener implements AbsListView.OnScrollListener {
             {
                 bar.hide();
                 Log.d("scroll","-------HIDDEN-");
+=======
+            final int currentFirstVisibleItem = mainList.getFirstVisiblePosition();
+
+            if (currentFirstVisibleItem > mLastFirstVisibleItem) {
+                Log.d("scroll","-------HIDDEN");
+                // getSherlockActivity().getSupportActionBar().hide();
+                Log.d("scroll",bar+":BAR");
+                if(bar!=null)
+                {
+                    bar.hide();
+                    Log.d("scroll","-------HIDDEN-");
+                }
+            } else if (currentFirstVisibleItem < mLastFirstVisibleItem) {
+                Log.d("scroll", "SHOWN----------");
+                if(bar!=null)
+                {
+                    // getSherlockActivity().getSupportActionBar().show();
+                    bar.show();
+                    Log.d("scroll", "-SHOWN----------");
+                }
+>>>>>>> fix_stuff
             }
         } else if (currentFirstVisibleItem < mLastFirstVisibleItem) {
             Log.d("scroll", "SHOWN----------");
