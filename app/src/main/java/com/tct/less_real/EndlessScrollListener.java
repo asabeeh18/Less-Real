@@ -23,9 +23,9 @@ public class EndlessScrollListener implements AbsListView.OnScrollListener {
     private boolean loading = true;
     static int mLastFirstVisibleItem = 0;
 
-    ActionBar bar;
+    android.support.v7.app.ActionBar bar;
 
-    public EndlessScrollListener(final ListView mainList,Context act,ActionBar bar) {
+    public EndlessScrollListener(final ListView mainList,Context act,android.support.v7.app.ActionBar bar) {
         this.bar=bar;
         this.act=act;
         this.mainList=mainList;
@@ -50,6 +50,7 @@ public class EndlessScrollListener implements AbsListView.OnScrollListener {
             if (currentFirstVisibleItem > mLastFirstVisibleItem) {
                 Log.d("scroll","-------HIDDEN");
                 // getSherlockActivity().getSupportActionBar().hide();
+                Log.d("scroll",bar+":BAR");
                 if(bar!=null)
                 {
                     bar.hide();

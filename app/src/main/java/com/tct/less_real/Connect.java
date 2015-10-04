@@ -34,13 +34,13 @@ public class Connect extends AsyncTask<String,Integer,String>
     static LIster customAdapter;
 
     Context act;
-    ActionBar bar;
+    android.support.v7.app.ActionBar bar;
     static ProgressBar pBar;
 
     public Connect() {
 
     }
-    public Connect(ListView mainList,Context act,ActionBar bar)
+    public Connect(ListView mainList,Context act,android.support.v7.app.ActionBar bar)
     {
         pBar=(new MainActivity()).mProgress;
         this.act=act;

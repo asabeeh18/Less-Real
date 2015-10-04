@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -63,8 +64,10 @@ public class MainActivity extends ActionBarActivity {
         //Log.d("bar",""+getActionBar().toString());
 
         //getActionBar() for future
-        connectify= new Connect(mainList,this,getActionBar());
+        connectify= new Connect(mainList,this,getSupportActionBar());
+
         connectify.execute(url);
+        Log.d("NULLS",getSupportActionBar()+"-:BAR");
         //END LOADING
 
 
@@ -92,6 +95,8 @@ public class MainActivity extends ActionBarActivity {
             return true;
         }
     });
+
+
     }
     public void clearData()
     {

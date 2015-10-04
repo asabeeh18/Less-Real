@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -80,7 +81,6 @@ public class LIster extends BaseAdapter {
       //  chapterDesc.invalidate();
         if(anime.img!=null) {
             ImageView bM = (ImageView) arg1.findViewById(R.id.saysImage);
-
             bM.setImageBitmap(anime.img);
         }
        else
@@ -88,7 +88,6 @@ public class LIster extends BaseAdapter {
             ImageView bM = (ImageView) arg1.findViewById(R.id.saysImage);
             bM.setVisibility(View.GONE);
 
-            //((ViewGroup)bM.getParent()).removeView(bM);
         }
         animeSays.setText(anime.says);
         animeName.setText(anime.anime);
@@ -97,5 +96,6 @@ public class LIster extends BaseAdapter {
 
         return arg1;
     }
+    //SWIPE
 
 }
