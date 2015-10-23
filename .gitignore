@@ -1,0 +1,5 @@
+*.lock
+*.bin
+*.bin
+*/dex-cache/*
+.idea/*
